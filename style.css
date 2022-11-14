@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    background-color: rgb(30, 9, 77);
+}
+
+ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(20, 4, 48, 0.637);
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a{
+    position: relative;
+    color: rgb(158, 13, 255);
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px 30px;
+    z-index: 1000;
+    backdrop-filter: blur(30px);
+}
+
+ul li a ion-icon{
+    font-size: 2.5cm;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+#marker{
+    position: absolute;
+    top: 0;
+    transition: 0.4s;
+    z-index: 1;
+}
+
+#marker::before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 50px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgb(206, 132, 255);
+    box-shadow: 0 0 5px rgb(114, 1, 114),
+    0 0 10px rgb(114, 1, 114),
+    0 0 25px rgb(114, 1, 114),
+    0 0 30px rgb(114, 1, 114);
+}
+
+ul li:nth-child(1).active~#marker::before{
+    background: cornflowerblue;
+    box-shadow: 0 0 25px cornflowerblue,
+    0 0 30px cornflowerblue,
+    0 0 45px cornflowerblue,
+    0 0 60px cornflowerblue;
+
+}
